@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-    before_action :set_course, only: [:show, :update]
+    before_action :set_course, only: [:show, :update, :destroy]
 
     def index 
         courses = Course.all
@@ -28,9 +28,20 @@ class CoursesController < ApplicationController
         end
     end
 
+    def destroy
+        if @course.destroy
+            render json: {message: "Deletion successful"}
+        else
+            render json: @course.errors, status: :unprocessable_entity
+        end
+    end
+
     private
     def set_course
         @course = Course.find_by(id: params[:id])
+        if !@course
+            render json: {message: "Course not found"}
+        end
     end
 
     def course_params
