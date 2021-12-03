@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-    before_action :set_course, only: [:show]
+    before_action :set_course, only: [:show, :update]
 
     def index 
         courses = Course.all
@@ -17,6 +17,14 @@ class CoursesController < ApplicationController
             render json: course, status: :created
         else
             render json: course.errors, status: :unprocessable_entity
+        end
+    end
+
+    def update
+        if @course.update(course_params)
+            render json: @course, status: :created
+        else
+            render json: @course.errors, status: :unprocessable_entity
         end
     end
 
