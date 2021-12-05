@@ -1,24 +1,22 @@
-# README
+Course DB is an application built using the Ruby on Rails framework, that allows users to read, create, update and delete courses. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Prerequisites
+Ensure you have ruby-2.6.3 or a later version installed. 
 
-Things you may want to cover:
+Familiarize yourself with the following documentation and source code: [Ruby on Rails Guides](https://guides.rubyonrails.org/)
 
-* Ruby version
+## Installation & Usage
+Fork this repository onto your computer then navigate into the project's directory, then run bundle install from within the terminal to install all of the gems/dependencies found in the Gemfile.
 
-* System dependencies
+Start application by executing 'rails s'.
 
-* Configuration
+To run the test suite 'rspec' + path to spec file. 
 
-* Database creation
+## Contributors' Guide
+This repo subscribes to the Contributor Code of Conduct, based on the Contributor Covenant. The maintainers of this code take the code of conduct, to which all who are interacting with the projects codebase and mailing lists must adhere, very seriously.
 
-* Database initialization
+## License
+This code is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contact
+If you want to contact me you can reach me at damely.tineo07@gmail.com.

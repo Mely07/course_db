@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
     before_action :set_course, only: [:show, :update, :destroy]
 
     def index 
-        courses = Course.all
+        courses = Course.all.paginate(page: params[:page], per_page: 100)
         render json: courses
     end
 
@@ -40,7 +40,7 @@ class CoursesController < ApplicationController
     def set_course
         @course = Course.find_by(id: params[:id])
         if !@course
-            render json: {message: "Course not found"}
+            render json: {error: "Course not found"}
         end
     end
 
